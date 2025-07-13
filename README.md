@@ -63,7 +63,7 @@ void setPublisher(String publisher) - validates that the publisher is non-empty.
 
 **Class invariant**: title must not be null or empty, publication year must be a positive integer and publisher must not be null or empty.
 
-## 4. Formal Specification - ReadableBook Interface
+## 5. Formal Specification - ReadableBook Interface
 **Purpose**: provides a restricted, read-only view of a book for customer use.
 
 **Fields (Private)**: 

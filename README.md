@@ -38,6 +38,7 @@ The outlined process ensures that customers can safely query and view the data (
 **Purpose**: represents a book in the library system an provides full access (read and write) for staff users.
 
 **Fields (Private)**: 
+
 String title 
 
 int publicationYear
@@ -47,6 +48,7 @@ String publisher
 **Constructor**: initializes the book with valid, non-empty values, and enforces the class invariant (e.g. title must not be empty, year must be positive.
 
 **Methods**: 
+
 String getTitle()
 
 void setTitle(String title) - validates that the title is non-empty.
@@ -65,6 +67,7 @@ void setPublisher(String publisher) - validates that the publisher is non-empty.
 **Purpose**: provides a restricted, read-only view of a book for customer use.
 
 **Fields (Private)**: 
+
 String title 
 
 int publicationYear
@@ -73,6 +76,7 @@ String publisher
 
 
 **Methods**: 
+
 String getTitle()
 
 int getPublicationYear()

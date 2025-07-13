@@ -28,8 +28,54 @@ In order to achieve this, it is necesary to implement the **encapsulation** prin
 
 To apply this concept to the problem in question, two separate classes need to be created. 
 
-For the staff, the class (for example, "Book") will have both **get** and **set** methods, allowing them to read and write data. However, the set methods must still enforce constraints to preserve the integrity of the information. For this reason, the **class invariant** - a set of rules that ensures the object's state is always valid - is a key point to prevent the staff users from introducing invalid data, such as an empty title or a negative year. 
+For the staff, the class (e.g. "Book") will have both **get** and **set** methods, allowing them to read and write data. However, the set methods must still enforce constraints to preserve the integrity of the information. For this reason, the **class invariant** - a set of rules that ensures the object's state is always valid - is a key point to prevent the staff users from introducing invalid data, such as an empty title or a negative year. 
 
-As for the customers, a read-only interface (for example, "ReadableBook") can be provided. This interface will expose only the get methods, allowing them to query and view information without any possibility of altering it. Because no changes are permitted through this interface, the class invariant remains fully protected when accessed by customers. Additionally, an interface was chosen instead of creating a separate class to avoid unnecessary duplication of code.
+As for the customers, a read-only interface (e.g. "ReadableBook") can be provided. This interface will expose only the get methods, allowing them to query and view information without any possibility of altering it. Because no changes are permitted through this interface, the class invariant remains fully protected when accessed by customers. Additionally, an interface was chosen instead of creating a separate class to avoid unnecessary duplication of code.
 
 The outlined process ensures that customers can safely query and view the data (due to the public get methods) while being prevented from making any modifications. At the same time, it allows library staff to access and update the data as needed, through the use of both public get and set methods.
+
+## 4. Formal Specification - Book Class
+**Purpose**: represents a book in the library system an provides full access (read and write) for staff users.
+
+**Fields (Private)**: 
+String title 
+
+int publicationYear
+
+String publisher
+
+**Constructor**: initializes the book with valid, non-empty values, and enforces the class invariant (e.g. title must not be empty, year must be positive.
+
+**Methods**: 
+String getTitle()
+
+void setTitle(String title) - validates that the title is non-empty.
+
+int getPublicationYear()
+
+void setPublicationYear(int year) - validates that the year is positive.
+
+String getPublisher()
+
+void setPublisher(String publisher) - validates that the publisher is non-empty.,
+
+**Class invariant**: title must not be null or empty, publication year must be a positive integer and publisher must not be null or empty.
+
+## 4. Formal Specification - ReadableBook Interface
+**Purpose**: provides a restricted, read-only view of a book for customer use.
+
+**Fields (Private)**: 
+String title 
+
+int publicationYear
+
+String publisher
+
+
+**Methods**: 
+String getTitle()
+
+int getPublicationYear()
+
+String getPublisher()
+
